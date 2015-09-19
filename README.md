@@ -5,3 +5,7 @@ A simple console-Application that moves all folders and files from desktop to a 
 If it is configured all directorys older that x days will be deleted.
 
 Have fun.
+
+
+
+Usage: CleanDesktop.exe <pathToDesktop> [-oldPath <pathToOldFileDirectory>] []-keepTime <timeToKeepFilesInDays>]
