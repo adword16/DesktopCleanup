@@ -9,3 +9,6 @@ Have fun.
 
 
 Usage: <code>CleanDesktop.exe < pathToDesktop > [-oldPath < pathToOldFileDirectory >] [-keepTime < timeToKeepFilesInDays >]</code> 
+
+
+License: MIT License
