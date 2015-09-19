@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Werte der Assemblyattribute überprüfen
 
-<Assembly: AssemblyTitle("CleanDeskop")>
+<Assembly: AssemblyTitle("CleanDesktop")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("CleanDeskop")>
-<Assembly: AssemblyCopyright("Copyright ©  2015")>
+<Assembly: AssemblyProduct("CleanDesktop")>
+<Assembly: AssemblyCopyright("Copyright Lukas Bauhaus ©  2015")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

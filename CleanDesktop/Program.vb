@@ -2,7 +2,7 @@
 Imports System.Globalization
 Imports System.IO
 
-Module Module1
+Module Program
     Private _AnyFileErrorHapend As Boolean
     Private Const OLD_DIR_PRE_FIX As String = "old_"
 
@@ -13,7 +13,7 @@ Module Module1
         Try
             Dim dir = args.ToList.FirstOrDefault
             If String.IsNullOrEmpty(dir) Then
-                Throw New InvalidEnumArgumentException("please call with path to desktop as argument")
+                Throw New InvalidEnumArgumentException("Usage: CleanDesktop.exe <pathToDesktop> [-oldPath <pathToOldFileDirectory>] []-keepTime <timeToKeepFilesInDays>]")
             End If
 
             If Not Directory.Exists(dir) Then
@@ -28,13 +28,16 @@ Module Module1
                         If Not Directory.Exists(oldPath) Then
                             Throw New DirectoryNotFoundException(oldPath)
                         End If
+
+                    ElseIf args(i).StartsWith("-keepTime", True, CultureInfo.InvariantCulture) Then
+                        maxKeepTimeinDays = CInt(GetNextArgument(args, i))
                     End If
                 Next
             End If
 
             ConsoleLog(String.Format("Cleaning Desktop '{0}'...", dir))
 
-            If String.IsNullOrWhiteSpace(oldPath) Then
+            If String.IsNullOrEmpty(oldPath) Then
                 ForcCleanDirectory(dir, toKeepDirectorys)
             Else
                 MoveTolOldDirectory(dir, oldPath, toKeepDirectorys)
@@ -132,7 +135,7 @@ Module Module1
     End Sub
 
     Private Sub ConsoleLogFileActionException(ioException As IOException)
-        _AnyFileErrorHapend = true
+        _AnyFileErrorHapend = True
         Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine(ioException.Message)
     End Sub
