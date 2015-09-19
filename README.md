@@ -8,4 +8,4 @@ Have fun.
 
 
 
-Usage: CleanDesktop.exe <pathToDesktop> [-oldPath <pathToOldFileDirectory>] []-keepTime <timeToKeepFilesInDays>]
+Usage: <code>CleanDesktop.exe < pathToDesktop > [-oldPath < pathToOldFileDirectory >] [-keepTime < timeToKeepFilesInDays >]</code> 
